@@ -11,7 +11,6 @@ config = ConfigParser()
 config.read(os.path.expanduser('~/.aws/credentials'))
 
 DEFAULT_PROFILE_BACKUP_NAME = 'old_default_backup'
-CREDENTIALS_BACKUP_FILE = 'credentials.aws_default_profile_swap.backup'
 
 
 def check_profile_exists(profile):
@@ -26,10 +25,6 @@ def check_profile_exists(profile):
         )
 
 
-def create_backup_of_credentials_file():
-    copyfile(src="~/.aws/credentials", dst="~/.aws/%s" % CREDENTIALS_BACKUP_FILE)
-
-
 def create_backup_of_default_profile():
     """
     Moves the current profile in [default] to [DEFAULT_PROFILE_BACKUP_NAME]
@@ -42,7 +37,6 @@ def create_backup_of_default_profile():
 
 
 def swap_profile(new_default_profile):
-    create_backup_of_credentials_file()
     create_backup_of_default_profile()
 
     config.remove_section('default')
