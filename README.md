@@ -41,3 +41,9 @@ aws_secret_access_key = QQQQ
 `aws-swap personal-project`
 
 `aws-swap work-project`
+
+# Acknowledgements
+This project was supported by Futurice's "Spice Hours" program.
+Futurice is an awesome digital consultancy company, they're likely recruiting.
+
+Check them out: www.futurice.com 
